@@ -66,10 +66,10 @@ to 0xFFFE for maximum precision when measuring current and power draw.
 
 ### The BLE/Console App
 
-Copy blueshunt.py to your ESP32 as main.py and it should
-run after reset.  The BLE UART service will show up as "blueshunt".  The 
-same values sent (or "notified") over BLE are also printed to the 
-Micropython console.
+Copy ina219.py to your ESP32 and then copy blueshunt.py as main.py.
+The BLE app it should run after a reset.  The App's BLE UART service will 
+show up as "blueshunt".  The same values sent (or "notified") over BLE 
+are also printed to the Micropython console.
 """)
 
 
