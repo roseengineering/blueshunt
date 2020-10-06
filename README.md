@@ -9,7 +9,7 @@ high-side current sensor using Micropython on a ESP32.  The app uses
 the nRF UART BLE serivce to send its readings over BLE.
 
 These reading are also printed to the terminal so if you don't want to 
-use bluetooth BLE you can connect to the ESP32 Micropython console instead.
+use BLE you can connect to the ESP32 Micropython console instead.
 
 This repo also contains a libary for reading
 voltage, power, and currents from a INA219 chip with Micropython.
