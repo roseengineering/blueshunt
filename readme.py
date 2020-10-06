@@ -19,7 +19,7 @@ print(f"""
 
 This repo contains an Bluetooth BLE app for reading from a INA219 I2C 
 high-side current sensor using Micropython on a ESP32.  The app uses 
-the nRF UART BLE serivce to send over BLE its readings.
+the nRF UART BLE serivce to send its readings over BLE.
 
 These reading are also printed to the terminal so if you don't want to 
 use bluetooth BLE you can connect to the ESP32 console instead.
