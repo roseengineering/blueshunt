@@ -46,7 +46,7 @@ INA219(i2c,
 
 1. "maxvolts" sets the BRNG register for different VBUS ranges, namely
 16V and 32V.  BRNG is set to the minimum voltage that maxvolts fits under.
-2. "maxamps" set the PG register for different VSHUNT ranges,
+2. "maxamps" sets the PG register for different VSHUNT ranges,
 namely .04V, .08V, .16V, and 0.32V.  PG is set to the minimum
 voltage that (maxamps * rshunt) fits under.
 3. The BADC, SADC, and MODE variables are set according to the tables in 
