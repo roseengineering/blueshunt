@@ -24,6 +24,7 @@ from ina219 import INA219
 i2c = I2C(1)
 rshunt = .1
 ina = INA219(i2c, rshunt=rshunt)
+print(ina.bus_voltage(), ina.power())
 print(ina.current(), ina.shunt_voltage() / rshunt)
 ```
 
