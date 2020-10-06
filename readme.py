@@ -32,13 +32,15 @@ voltage, power, and currents from a INA219 chip.
 A simple example for reading a INA219 using the library:
 
 ```python
-from machine import I2C
-from ina219 import INA219
-i2c = I2C(1)
-rshunt = .1
-ina = INA219(i2c, rshunt=rshunt)
-print(ina.bus_voltage(), ina.power())
-print(ina.current(), ina.shunt_voltage() / rshunt)
+>>> from machine import I2C
+>>> from ina219 import INA219
+>>> i2c = I2C(1)
+>>> rshunt = .1
+>>> ina = INA219(i2c, rshunt=rshunt)
+>>> print(ina.bus_voltage(), ina.power())
+4.712 0.005125156
+>>> print(ina.current(), ina.shunt_voltage() / rshunt)
+0.001100034 0.0011
 ```
 
 The class INA219 takes the following arguments:
