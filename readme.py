@@ -35,7 +35,8 @@ A simple example for reading the INA219 library.
 from machine import I2C
 from ina219 import INA219
 i2c = I2C(1)
-ina = INA219(i2c, rshunt=.1)
+rshunt = .1
+ina = INA219(i2c, rshunt=rshunt)
 print(d.current(), d.shunt_voltage() / rshunt)
 ```
 
