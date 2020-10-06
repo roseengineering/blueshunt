@@ -46,7 +46,7 @@ The class INA219 takes the following arguments:
 INA219(i2c, 
        rshunt=0.1,   # shunt resistance measured across by the INA219
        maxvolts=16,  # the max volts you expect at IN-
-       maxamps=.1,   # the max amps you expect through the sensor
+       maxamps=.1,   # the max amps you expect through rshunt
        BADC=15,      # average 128 12bit samples to get bus voltage
        SADC=15,      # average 128 12bit supply to get shunt voltage
        MODE=7,       # set sampling to shunt and bus continuous mode
