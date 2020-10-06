@@ -11,8 +11,8 @@ the nRF UART BLE serivce to send its readings over BLE.
 In addition these reading are printed to the terminal so if you don't want to 
 use BLE you can connect to the ESP32 Micropython console instead.
 
-This repo also contains a libary for reading
-voltage, power, and currents from a INA219 chip with Micropython.
+This repo also contains a Micropython libary for reading
+voltage, power, and currents from a INA219 chip.
 
 ### Simple Example
 
