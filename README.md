@@ -4,7 +4,7 @@
 
 ![](output.png)
 
-This repo contains an Bluetooth BLE app for reading from a INA219 I2C 
+This repo contains a Bluetooth BLE app for reading from a INA219 I2C 
 high-side current sensor using Micropython on a ESP32.  The app uses 
 the nRF UART BLE serivce to send its readings over BLE.
 
