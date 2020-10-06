@@ -16,7 +16,7 @@ voltage, power, and currents from a INA219 chip with Micropython.
 
 ### Simple Example
 
-A simple example for reading a INA219 using the library.
+A simple example for reading a INA219 using the library:
 
 ```python
 from machine import I2C
@@ -27,7 +27,7 @@ ina = INA219(i2c, rshunt=rshunt)
 print(ina.current(), ina.shunt_voltage() / rshunt)
 ```
 
-The class INA219 takes the following arguments                 
+The class INA219 takes the following arguments:
 
 ```python
 INA219(i2c, 
@@ -54,7 +54,7 @@ to 0xFFFE for maximum precision when measuring current and power draw.
 ### The BLE/Console App
 
 Copy ina219.py to your ESP32 and then copy blueshunt.py as main.py.
-The BLE app it should run after a reset.  The App's BLE UART service will 
+The BLE app should run after a reset.  The App's BLE UART service will 
 show up as "blueshunt".  The same values sent (or "notified") over BLE 
 are also printed to the Micropython console.
 
