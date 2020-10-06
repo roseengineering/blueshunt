@@ -12,7 +12,7 @@ These reading are also printed to the terminal so if you don't want to
 use bluetooth BLE you can connect to the ESP32 console instead.
 
 This repo also contains a Libary for reading the bus and shunt
-voltage and currents from a ina219 chip using Micropython.
+voltage and currents from a INA219 chip using Micropython.
 
 ### Simple Example
 
