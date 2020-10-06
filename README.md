@@ -16,7 +16,7 @@ voltage, power, and currents from a INA219 chip with Micropython.
 
 ### Simple Example
 
-A simple example for reading the INA219 library.
+A simple example for reading a INA219 using the library.
 
 ```python
 from machine import I2C
