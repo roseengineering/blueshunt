@@ -130,9 +130,10 @@ ina = ina219.INA219(i2c, rshunt=RSHUNT, maxvolts=MAXVOLTS, maxamps=MAXAMPS)
 ble = bluetooth.BLE()
 blue = BLEUART(ble, NAME)
 
+print("V,mA,mW")
 while True:
     pin.value(not pin.value()) 
-    buf = "{:.3f},{:.1f},{:.2f}".format(
+    buf = "{:.2f},{:.1f},{:.1f}".format(
         ina.bus_voltage(), 
         ina.current() * 1000,
         ina.power() * 1000)
