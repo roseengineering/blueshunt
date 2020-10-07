@@ -61,3 +61,5 @@ The BLE app should run after a reset.  The App's BLE UART service will
 show up as "blueshunt".  The same values sent (or "notified") over BLE 
 are also printed to the Micropython console.
 
+The order of the output is volts,milliamps,milliwatts.
+

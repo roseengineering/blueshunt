@@ -132,7 +132,7 @@ blue = BLEUART(ble, NAME)
 
 while True:
     pin.value(not pin.value()) 
-    buf = "{:6.3f}V {:5.1f}mA {:6.2f}mW".format(
+    buf = "{:.3f},{:.1f},{:.2f}".format(
         ina.bus_voltage(), 
         ina.current() * 1000,
         ina.power() * 1000)
