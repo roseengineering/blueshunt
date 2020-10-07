@@ -95,6 +95,7 @@ class BLEUART:
 # ---------------
 # SCL GPIO: 18 25
 # SDA GPIO: 19 26
+# ---------------
 
 # ESP32 30 PINS
 #             ------------
@@ -105,15 +106,16 @@ class BLEUART:
 # input only  35        21
 # crystal     32        19
 # crystal     33        18
-#             25         5  bootstraping
+#             25         5  bootstrap
 #             26        17
 #             27        16
 # bootstrap   12         4
-#             13         2  on-board led / bootstraping
+#             13         2  on-board led / bootstrap
 #             GND      GND
 #             VIN      3V3
-# ------------
+#             ------------
 # GPIO0: low for bootloader / high for execution mode
+# EN:    resets the ESP32
 
 NAME = "blueshunt"
 I2C_ID = 1     # SCL: GPIO25, SDA: GPIO26
@@ -130,12 +132,11 @@ blue = BLEUART(ble, NAME)
 
 while True:
     pin.value(not pin.value()) 
-    bv = ina.bus_voltage()
-    buf = "{:6.3f}V {:7.2f}mA".format(
+    buf = "{:6.3f}V {:5.1f}mA {:6.2f}mW".format(
         ina.bus_voltage(), 
-        ina.current() * 1000)
+        ina.current() * 1000,
+        ina.power() * 1000)
     print(buf)
     blue.write(buf)
     time.sleep_ms(1000)
-
 
