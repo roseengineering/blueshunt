@@ -63,3 +63,9 @@ are also printed to the Micropython console.
 
 The order of the output is volts,milliamps,milliwatts.
 
+### Helper scripts
+
+1. blescan.py - run with sudo to scan for BLE devices.
+2. bleread.py - run to read from your blueshunt device.
+
+
