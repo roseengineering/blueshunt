@@ -29,7 +29,7 @@ voltage, power, and currents from a INA219 chip.
 
 ### Simple Example
 
-A simple example for reading a INA219 using the library:
+A simple example of reading a INA219 using the library:
 
 ```python
 >>> from machine import I2C
