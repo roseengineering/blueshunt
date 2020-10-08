@@ -1,22 +1,18 @@
 
-
 # Micropython INA219 High Side Current Sensor Library with ESP32 Bluetooth BLE App
 
 ![](output.png)
 
 This repo contains a Bluetooth BLE app for reading from a INA219 I2C 
-high-side current sensor using Micropython on a ESP32.  The app uses 
-the nRF UART BLE serivce to send its readings over BLE. (see https://play.google.com/store/apps/details?id=com.nordicsemi.nrfUARTv2&hl=en&gl=US)
+high-side current sensor using Micropython.  The readings
+are sent over the nRF UART BLE serivce.  You can use the included bleread.py script or the nrfUART app on your phone to connect to it.  (see https://play.google.com/store/apps/details?id=com.nordicsemi.nrfUARTv2&hl=en&gl=US) Sensor readings are also printed to the Micropython console.
 
-In addition these readings are printed to the terminal so if you don't want to 
-use BLE you can connect to the ESP32 Micropython console instead.
-
-This repo also contains a Micropython library for reading
-voltage, power, and currents from a INA219 chip.
+Included in the repo, as well, is the Micropython library the
+app uses to read voltage, power, and current from the INA219 chip.
 
 ### Simple Example
 
-A simple example of reading a INA219 using the library:
+A simple example of reading from a INA219, connected to I2C port/id 1, using the library follows:
 
 ```python
 >>> from machine import I2C
@@ -56,16 +52,19 @@ to 0xFFFE for maximum precision when measuring current and power draw.
 
 ### The BLE/Console App
 
-Copy ina219.py to your ESP32 and then copy blueshunt.py as main.py.
-The BLE app should run after a reset.  The App's BLE UART service will 
+First copy the ina219.py library to the ESP32 as is.
+Next copy blueshunt.py as main.py.
+After a reset the BLE app should run and immediately start transmitting
+and blinking the ESP32's led.
+The App's BLE UART service will 
 show up as "blueshunt".  The same values sent (or "notified") over BLE 
 are also printed to the Micropython console.
 
-The order of the output is volts,milliamps,milliwatts.
+The order of the comma separated output is volts,milliamps,milliwatts.
 
 ### Helper scripts
 
-1. blescan.py - run with sudo to scan for BLE devices.
-2. bleread.py - run to read from your blueshunt device.
+1. blescan.py - Run with sudo to scan for BLE devices.
+2. bleread.py - Run to read from your blueshunt device.  Pass the mac address of the ESP32 you want to connect to as an argument on the command line.
 
 
