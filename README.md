@@ -7,7 +7,7 @@ This repo contains a Bluetooth BLE app for reading from a INA219 I2C
 high-side current sensor using Micropython.  The readings
 are sent over the nRF UART BLE serivce.  You can use the included bleread.py script or the nrfUART app on your phone to connect to it.  (see https://play.google.com/store/apps/details?id=com.nordicsemi.nrfUARTv2&hl=en&gl=US) Sensor readings are also printed to the Micropython console.
 
-Included in the repo, as well, is the Micropython library the
+Included in the repo is the Micropython library the
 app uses to read voltage, power, and current from the INA219 chip.
 
 ### Simple Example
