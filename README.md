@@ -65,6 +65,6 @@ The order of the comma separated output is volts,milliamps,milliwatts.
 ### Helper scripts
 
 1. blescan.py - Run with sudo to scan for BLE devices.
-2. bleread.py - Run to read from your blueshunt device.  Pass the mac address of the ESP32 you want to connect to as an argument on the command line.
+2. bleread.py - Run to read from your blueshunt device.  Pass the mac address of the ESP32 you want to connect to as the command line argument.
 
 
