@@ -1,5 +1,4 @@
 
-from math import trunc
 import ustruct
 
 REG_CONFIGURATION = 0x00
