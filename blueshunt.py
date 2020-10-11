@@ -91,31 +91,43 @@ class BLEUART:
 
 ##################################
 
+# ======================
+# Micropython ID Matrix
+# ======================
 # I2C IDS:   0  1
 # ---------------
 # SCL GPIO: 18 25
 # SDA GPIO: 19 26
 # ---------------
 
+# =============
 # ESP32 30 PINS
+# =============
 #             ------------
-#             EN        23
-# input only  VP        22
-# input only  VN         1  tx pin
-# input only  34         3  rx pin
-# input only  35        21
-# crystal     32        19
-# crystal     33        18
-#             25         5  bootstrap
-#             26        17
-#             27        16
-# bootstrap   12         4
-#             13         2  on-board led / bootstrap
+#             EN        23  1
+#    I,0,R    VP/36     22  1
+#    I,0,R    VN/39      1  TX
+#    I,0,R    34         3  RX
+#    I,0,R    35        21  1
+#      0,R    32        19  1
+#      0,R    33        18  1
+#      0,R    25         5  1,U,B
+#      0,R    26        17  1
+#      0,R    27        16  1
+#  B,D,1,R    12         4  R,1,D
+#    D,1,R    13         2  R,1,D,B,on-board led
 #             GND      GND
 #             VIN      3V3
 #             ------------
-# GPIO0: low for bootloader / high for execution mode
+# 0:     input disabled
+# 1:     input enabled
+# D:     pulldown
+# U:     pullup
+# R:     pad has RTC/analog functions via RTC_MUX
+# B:     boot strapping pins (MTDI, MTDO, IO0, IO2, IO5)
+# I:     pad can only be configured as input GPIO
 # EN:    resets the ESP32
+# IO0:   low for bootloader / high for execution mode
 
 NAME = "blueshunt"
 I2C_ID = 1     # SCL: GPIO25, SDA: GPIO26
