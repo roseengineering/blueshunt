@@ -90,35 +90,43 @@ class BLEUART:
             self._ble.gatts_notify(conn_handle, self._tx_handle, data)
 
 ##################################
-
-# ======================
-# Micropython ID Matrix
-# ======================
-# I2C IDS:   0  1
-# ---------------
-# SCL GPIO: 18 25
-# SDA GPIO: 19 26
-# ---------------
-
+# =============
+# LOLIN32 Lite
+# =============
+#           ------------
+#    I,0,R  VP/36    3V3
+#    I,0,R  VN/39     22  1,LED
+#           EN        19  1
+#    I,0,R  34        23  1
+#    I,0,R  35        18  1
+#      0,R  32         5  1,U,B
+#      0,R  33        17  1
+#      0,R  25        16  1
+#      0,R  26         4  R,1,D
+#      0,R  27         0  R,1,U,B
+#      1,R  14         2  R,1,D,B
+#  B,D,1,R  12        15  R,0
+#           GND       13  R,1,D
+#           ------------
 # =============
 # ESP32 30 PINS
 # =============
-#             ------------
-#             EN        23  1
-#    I,0,R    VP/36     22  1
-#    I,0,R    VN/39      1  TX
-#    I,0,R    34         3  RX
-#    I,0,R    35        21  1
-#      0,R    32        19  1
-#      0,R    33        18  1
-#      0,R    25         5  1,U,B
-#      0,R    26        17  1
-#      0,R    27        16  1
-#  B,D,1,R    12         4  R,1,D
-#    D,1,R    13         2  R,1,D,B,on-board led
-#             GND      GND
-#             VIN      3V3
-#             ------------
+#           ------------
+#           EN        23  1
+#    I,0,R  VP/36     22  1
+#    I,0,R  VN/39      1  TX
+#    I,0,R  34         3  RX
+#    I,0,R  35        21  1
+#      0,R  32        19  1
+#      0,R  33        18  1
+#      0,R  25         5  1,U,B
+#      0,R  26        17  1
+#      0,R  27        16  1
+#  B,D,1,R  12         4  R,1,D
+#    D,1,R  13         2  R,1,D,B,LED
+#           GND      GND
+#           VIN      3V3
+#           ------------
 # 0:     input disabled
 # 1:     input enabled
 # D:     pulldown
@@ -128,6 +136,16 @@ class BLEUART:
 # I:     pad can only be configured as input GPIO
 # EN:    resets the ESP32
 # IO0:   low for bootloader / high for execution mode
+##################################
+
+# ======================
+# Micropython ID Matrix
+# ======================
+# I2C IDS:   0  1
+# ---------------
+# SCL GPIO: 18 25
+# SDA GPIO: 19 26
+# ---------------
 
 NAME = "blueshunt"
 I2C_ID = 1     # SCL: GPIO25, SDA: GPIO26
